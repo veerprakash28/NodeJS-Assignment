@@ -1,0 +1,20 @@
+<%- include('partials/header'); -%>
+
+<div class="content">
+  <h2 class="allmails">All Mails</h2>
+  <div><a href="/download" class="download">Download All Mails</a></div>
+  <ul class="mail-box">
+    <% if (mails.length > 0) { %> <% mails.forEach(mail => { %>
+    <li class="mail">
+      <p><strong>From: </strong> <%= mail.name %></p>
+      <p><strong>To:</strong> <%= mail.to %></p>
+      <p><strong>Subject:</strong> <%=mail.subject%></p>
+      <p><strong>Message:</strong> <%=mail.text%></p>
+    </li>
+    <% }) %> <% } else { %>
+  </ul>
+  <h1 class="nomail">There are no mails to display.</h1>
+  <% } %>
+</div>
+
+<%- include('partials/footer'); -%>

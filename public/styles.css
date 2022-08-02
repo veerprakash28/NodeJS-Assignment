@@ -1,0 +1,210 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+body {
+  margin: 20px 40px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: #fafafa;
+}
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+a,
+p,
+input,
+label,
+button,
+div,
+footer {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", serif;
+  color: #444;
+}
+button {
+  cursor: pointer;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 120px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav li {
+  margin-left: 20px;
+}
+nav li a {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+.btn {
+  border-radius: 20px;
+  background: #d61c4e;
+  color: white;
+}
+
+.download{
+  background-color: #d61c4e;
+  color: white;
+  float: right;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+/* .btn:hover {
+  border: 2px solid #d61c4e;
+  background-color: transparent;
+  color: #d61c4e;
+} */
+
+header form h2 {
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+header form {
+  width: 400px;
+  margin: 0 auto -120px 250px;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: white;
+}
+header input {
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+}
+header textarea {
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+}
+header label {
+  display: block;
+  margin: 20px 0 10px;
+}
+header button {
+  margin-top: 30px;
+  border-radius: 36px;
+  background: #d61c4e;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+.error {
+  color: red;
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.notUser {
+  font-size: small;
+  float: right;
+  font-weight: 500;
+  color: #aaa;
+  position: inline;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-top: -120px;
+}
+header img {
+  width: 450px;
+  margin-right: 0px;
+  margin-left: -30px;
+  /* margin-top: 20px; */
+}
+header h2 {
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+header h3 {
+  font-size: 1em;
+  margin-bottom: 3px;
+  margin-top: -8px;
+  margin-left: 2px;
+  color: #999;
+}
+header .btn {
+  margin-top: 14px;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 0.7em;
+}
+header .headings {
+  margin-top: -50px;
+}
+.allmails{
+  margin-top: -100px;
+  margin-bottom: -30px;
+  text-align: center;
+  color: #d61c4e;
+}
+.nomail{
+  text-align: center;
+  color: #d61c4e;
+
+}
+
+.sendmail{
+  margin-left: 10px;
+}
+.mail-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 80px;
+  margin: 80px AUTO;
+  max-width: 1200px;
+}
+.mail {
+  display: inline-block;
+  border-radius: 20px;
+  /* background: #FF8FB1; */
+  border: 2px solid #D61C4E;
+  position: relative;
+  text-align: center;
+  padding: 5px 20px 25px 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 150px;
+  color: #aaa;
+}
