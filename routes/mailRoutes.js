@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { requireAuth, checkUser } = require("../middleware/authMiddleware");
+const { requireAuth } = require("../middleware/authMiddleware");
 const mailController = require("../controllers/mailController");
 
 const mailRouter = Router();

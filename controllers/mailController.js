@@ -12,8 +12,6 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Routes
 
-// module.exports.mail_index = (req, res) => {};
-
 module.exports.mail_get = (req, res) => {
   Mail.find()
     .sort({ createdAt: -1 })
@@ -25,7 +23,7 @@ module.exports.mail_get = (req, res) => {
 };
 
 module.exports.mail_post = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { to, name, from, subject, message } = req.body;
 
   // Structure Msg
@@ -36,10 +34,10 @@ module.exports.mail_post = async (req, res) => {
       email: from,
     },
     subject,
-    message,
+    text:message,
   };
 
-  console.log(msg);
+  // console.log(msg);
   // Create mails db
   const mail = new Mail(req.body);
 
@@ -53,7 +51,7 @@ module.exports.mail_post = async (req, res) => {
   sgMail
     .send(msg)
     .then((response) => console.log("Mail sent"))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err.response.body));
 
   // console.log("Sent")
 };
