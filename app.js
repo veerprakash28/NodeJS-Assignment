@@ -15,6 +15,7 @@ const app = express();
 // middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // view engine
@@ -37,4 +38,3 @@ app.get("/", (req, res) => res.render("home"));
 // app.get("/getmail", requireAuth, (req, res) => res.render("mails"));
 app.use(authRoutes);
 app.use(mailRoutes);
-

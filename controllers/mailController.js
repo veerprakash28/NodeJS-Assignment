@@ -23,9 +23,10 @@ module.exports.mail_get = (req, res) => {
 };
 
 module.exports.mail_post = async (req, res) => {
-  // console.log(req.body);
   const { to, name, from, subject, message } = req.body;
 
+  // console.log(req.body);
+  // const fromMail = "noreplytesting28@gmail.com";
   // Structure Msg
   const msg = {
     to,
@@ -34,26 +35,25 @@ module.exports.mail_post = async (req, res) => {
       email: from,
     },
     subject,
-    text:message,
+    text: message,
   };
 
-  // console.log(msg);
+  // console.log(msg)
+
   // Create mails db
   const mail = new Mail(req.body);
 
   // Saving mail to database
   mail
     .save()
-    .then((result) => res.redirect("/getmail"))
+    .then((result) => console.log("Mail Saved to Database"))
     .catch((err) => res.status(400).json({ err }));
 
   // Sending mail through Sendgrid
   sgMail
     .send(msg)
-    .then((response) => console.log("Mail sent"))
-    .catch((err) => console.log(err.response.body));
-
-  // console.log("Sent")
+    .then((response) => res.redirect("/mailsent"))
+    .catch((err) => res.redirect("/error"));
 };
 
 module.exports.mail_download = async (req, res) => {
@@ -72,7 +72,7 @@ module.exports.mail_download = async (req, res) => {
       { header: "Sender Name", key: "name", width: 15 },
       { header: "Sender Email", key: "from", width: 30 },
       { header: "Subject", key: "subject", width: 25 },
-      { header: "Message", key: "text", width: 30 },
+      { header: "Message", key: "message", width: 30 },
     ];
 
     let count = 1;
@@ -95,4 +95,12 @@ module.exports.mail_download = async (req, res) => {
 
 module.exports.sendMail_get = async (req, res) => {
   res.render("sendmail");
+};
+
+module.exports.mail_sent = async (req, res) => {
+  res.render("mailSent");
+};
+
+module.exports.error_404 = async (req, res) => {
+  res.render("404");
 };

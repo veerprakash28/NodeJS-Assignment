@@ -5,32 +5,34 @@
     <img src="/sendingMail.png" alt="" />
   </div>
 
-  <!-- <form action="/sendmail" method="POST">
+  <form action="/sendmail" method="POST">
     <h2>Send New Mail</h2>
+
     <label for="to">To:</label>
     <input type="text" name="to" id="to" required />
+
     <label for="name">Your Name:</label>
     <input type="text" name="name" id="name" required />
 
     <label for="from">From:</label>
-    <input type="text" name="from" id="from" required />
+    <input type="text" name="from" id="from" value="noreplytesting28@gmail.com" readonly required style="color: grey"/>
 
     <label for="subject">Subject:</label>
     <input type="text" name="subject" id="subject" required />
+
     <label for="message">Message:</label>
     <textarea name="message" id="message" required></textarea>
-    <button type="submit">Send</button>
-  </form> -->
 
+    <button>Send</button>
+  </form>
 
-
-  <div class="headings">
+  <!-- <div class="headings">
     <h2>SendGrid API</h2>
     <h3>A Node.js CRUD App</h3>
 
     <h1 style="color: #d61c4e">Use PostMan to send Mail</h1>
-    <p>POST - localhost:3000/sendmail</p> 
-<!-- 
+    <p>POST - localhost:3000/sendmail</p>  -->
+  <!-- 
     <h2 class="heading">Send a new mail</h2>
 
     <div class="">
@@ -45,7 +47,34 @@
       </form>
     </div> -->
 
-  </div>
+  <!-- </div> -->
 </header>
 
+<!-- <script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const to = form.to.value;
+    const name = form.name.value;
+    const from = form.from.value;
+    const subject = form.subject.value;
+    const message = form.message.value;
+    try {
+      const res = await fetch("/sendmail", {
+        method: "POST",
+        body: JSON.stringify({ to, name, from, subject, message }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+      if (data.user) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script> -->
 <%- include('partials/footer'); -%>
