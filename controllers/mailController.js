@@ -16,7 +16,7 @@ module.exports.mail_get = (req, res) => {
   Mail.find()
     .sort({ createdAt: -1 })
     .then((result) => {
-      //   console.log(result);
+
       res.render("mails", { mails: result });
     })
     .catch((err) => console.log(err));
@@ -26,7 +26,7 @@ module.exports.mail_post = async (req, res) => {
   const { to, name, from, subject, message } = req.body;
 
   // console.log(req.body);
-  // const fromMail = "noreplytesting28@gmail.com";
+
   // Structure Msg
   const msg = {
     to,
@@ -85,10 +85,8 @@ module.exports.mail_download = async (req, res) => {
       cell.font = { bold: true };
     });
     const data = await workbook.xlsx.writeFile("Download - All Mail.xlsx");
-    // console.log("Downloaded Files");
     res.render("download");
   } catch (err) {
-    // console.log(err);
     res.status(500).send(err);
   }
 };

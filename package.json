@@ -14,7 +14,6 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
     "mongoose": "^5.9.23",
-    "node-fetch": "^3.2.10",
     "validator": "^13.7.0"
   },
   "scripts": {
@@ -26,10 +25,6 @@
     "url": "git+https://github.com/iamshaunjp/node-express-jwt-auth.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iamshaunjp/node-express-jwt-auth/issues"
-  },
-  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme"
+  "author": "Veer Prakash - Node.JS Assignment",
+  "license": "ISC"
 }

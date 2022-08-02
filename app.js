@@ -35,6 +35,5 @@ mongoose
 // routes
 app.get("*", checkUser);
 app.get("/", (req, res) => res.render("home"));
-// app.get("/getmail", requireAuth, (req, res) => res.render("mails"));
 app.use(authRoutes);
 app.use(mailRoutes);
