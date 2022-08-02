@@ -30,21 +30,20 @@ module.exports.mail_post = async (req, res) => {
 
   // Structure Msg
   const msg = {
-    to: to,
+    to,
     from: {
       name: name,
       email: from,
     },
-    subject: subject,
-    message: message,
+    subject,
+    message,
   };
 
+  console.log(msg);
   // Create mails db
   const mail = new Mail(req.body);
 
-  //   console.log(req.body);
-
-  // Savinf mail to database
+  // Saving mail to database
   mail
     .save()
     .then((result) => res.redirect("/getmail"))
@@ -91,7 +90,7 @@ module.exports.mail_download = async (req, res) => {
     // console.log("Downloaded Files");
     res.render("download");
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).send(err);
   }
 };
